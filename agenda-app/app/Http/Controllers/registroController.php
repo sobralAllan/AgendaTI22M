@@ -32,6 +32,21 @@ class registroController extends Controller
         $ids = registroModel::all();
         return view('paginas.consultar', compact('ids'));
     }//fim do consultar
+
+    public function editar($id){
+        $dado = registroModel::findOrFail($id);
+        return view('paginas.editar', compact('dado'));
+    }//fim do editar
+
+    public function atualizar(Request $request, $id){
+        registroModel::where('id', $id)->update($request->all());
+        return redirect('/consultar');
+    }//fim do atualizar
+
+    public function excluir(Request $request, $id){
+        registroModel::where('id', $id)->delete($request->all());
+        return redirect('/consultar');
+    }//fim do excluir
 }//fim da classe
 
 

@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[\App\Http\Controllers\registroController::Class,'paginaInicial']);
 Route::get('/cadastrar',[\App\Http\Controllers\registroController::Class,'cad']);
 Route::get('/cadastrar/salvar',[\App\Http\Controllers\registroController::Class,'inserir']);
+Route::get('/consultar',[\App\Http\Controllers\registroController::Class,'consultar']);
+Route::get('/editar/{id}',[\App\Http\Controllers\registroController::Class,'editar']);
+Route::get('/atualizar/{id}',[\App\Http\Controllers\registroController::Class,'atualizar']);
+Route::get('/excluir/{id}',[\App\Http\Controllers\registroController::Class,'excluir']);
